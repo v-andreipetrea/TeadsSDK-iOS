@@ -76,7 +76,7 @@ extension InReadDirectScrollViewController: TeadsInReadAdPlacementDelegate {
 
 extension InReadDirectScrollViewController: TeadsAdDelegate {
     func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        return self
+        return nil
     }
 
     func didCatchError(ad _: TeadsAd, error _: Error) {

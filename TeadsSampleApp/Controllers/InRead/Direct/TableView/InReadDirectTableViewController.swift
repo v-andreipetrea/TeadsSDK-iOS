@@ -129,7 +129,7 @@ extension InReadDirectTableViewController: TeadsAdDelegate {
     func didRecordClick(ad _: TeadsAd) {}
 
     func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
-        return self
+        return nil
     }
 
     func didCatchError(ad: TeadsAd, error _: Error) {
