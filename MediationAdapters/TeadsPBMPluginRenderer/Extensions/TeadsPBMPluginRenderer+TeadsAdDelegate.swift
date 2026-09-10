@@ -9,6 +9,7 @@ import TeadsSDK
 import UIKit
 
 extension TeadsPBMPluginRenderer: TeadsAdDelegate {
+
     public func willPresentModalView(ad: TeadsSDK.TeadsAd) -> UIViewController? {
         guard let adContainer = adViewContainers[ad.requestIdentifier.uuidString],
               let adView = adContainer.adView else { return nil }

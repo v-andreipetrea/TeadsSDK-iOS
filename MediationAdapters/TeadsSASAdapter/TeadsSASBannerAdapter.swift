@@ -11,18 +11,18 @@ import UIKit
 
 @objc(TeadsSASBannerAdapter)
 final class TeadsSASBannerAdapter: NSObject, SASMediationBannerAdapter {
-    @objc weak var delegate: SASMediationBannerAdapterDelegate?
+    @objc public weak var delegate: SASMediationBannerAdapterDelegate?
     private var currentBanner: TeadsInReadAdView?
     private var placement: TeadsInReadAdPlacement?
     private weak var controller: UIViewController?
     private var adSettings: TeadsAdapterSettings?
 
-    @objc required init(delegate: SASMediationBannerAdapterDelegate) {
+    @objc public required init(delegate: SASMediationBannerAdapterDelegate) {
         super.init()
         self.delegate = delegate
     }
 
-    @objc func requestBanner(withServerParameterString serverParameterString: String, clientParameters: [AnyHashable: Any], viewController: UIViewController) {
+    @objc public func requestBanner(withServerParameterString serverParameterString: String, clientParameters: [AnyHashable: Any], viewController: UIViewController) {
         controller = viewController
 
         guard let serverParameter = ServerParameter.instance(from: serverParameterString) else {
@@ -53,7 +53,7 @@ final class TeadsSASBannerAdapter: NSObject, SASMediationBannerAdapter {
 }
 
 extension TeadsSASBannerAdapter: TeadsInReadAdPlacementDelegate {
-    func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
+    public func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         ad.delegate = self
         currentBanner?.bind(ad)
         if adSettings?.hasSubscribedToAdResizing ?? false {
@@ -66,48 +66,48 @@ extension TeadsSASBannerAdapter: TeadsInReadAdPlacementDelegate {
         }
     }
 
-    func didFailToReceiveAd(reason: AdFailReason) {
+    public func didFailToReceiveAd(reason: AdFailReason) {
         delegate?.mediationBannerAdapter(self, didFailToLoadWithError: reason, noFill: reason.isNoFill)
     }
 
-    func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
+    public func didUpdateRatio(ad _: TeadsInReadAd, adRatio: TeadsAdRatio) {
         if adSettings?.hasSubscribedToAdResizing ?? false {
             currentBanner?.updateHeight(with: adRatio)
         }
     }
 
-    func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
+    public func adOpportunityTrackerView(trackerView _: TeadsAdOpportunityTrackerView) {
         // adOpportunityTrackerView is handled by TeadsSDK
     }
 }
 
 extension TeadsSASBannerAdapter: TeadsAdDelegate {
-    func didRecordImpression(ad _: TeadsAd) {
+    public func didRecordImpression(ad _: TeadsAd) {
         // not handled by SASDisplayKit
     }
 
-    func didRecordClick(ad _: TeadsAd) {
+    public func didRecordClick(ad _: TeadsAd) {
         delegate?.mediationBannerAdapterDidReceiveAdClickedEvent(self)
     }
 
-    func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
+    public func willPresentModalView(ad _: TeadsAd) -> UIViewController? {
         delegate?.mediationBannerAdapterWillPresentModalView(self)
         return controller
     }
 
-    func didCatchError(ad _: TeadsAd, error: Error) {
+    public func didCatchError(ad _: TeadsAd, error: Error) {
         delegate?.mediationBannerAdapter(self, didFailToLoadWithError: error, noFill: false)
     }
 
-    func didClose(ad _: TeadsAd) {
+    public func didClose(ad _: TeadsAd) {
         // not handled by SASDisplayKit
     }
 
-    func didExpandedToFullscreen(ad _: TeadsAd) {
+    public func didExpandedToFullscreen(ad _: TeadsAd) {
         delegate?.mediationBannerAdapterWillPresentModalView(self)
     }
 
-    func didCollapsedFromFullscreen(ad _: TeadsAd) {
+    public func didCollapsedFromFullscreen(ad _: TeadsAd) {
         delegate?.mediationBannerAdapterWillDismissModalView(self)
     }
 }

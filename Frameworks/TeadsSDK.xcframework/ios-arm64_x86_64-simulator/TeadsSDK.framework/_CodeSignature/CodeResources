@@ -18,11 +18,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		gs8uI3GiwcwjpWgtz6V5Lv20WvM=
+		jChq01ZEDG/re+SdvSSHYAUDvcQ=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		wZxL6x4Wr8Ercf7Nukzm30ljoc0=
+		aVmihvjMjMT13Ogl4HzOjJ8dLP4=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		CqZ2mZwos/ZtLpPTznwXCGwbGAw=
+		e0pPs/XzR/YyQtV5PAuHOTH57YI=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		wZxL6x4Wr8Ercf7Nukzm30ljoc0=
+		aVmihvjMjMT13Ogl4HzOjJ8dLP4=
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		6FWZnUt9TKC1Fbg3b0nWxmDAI00=
+		hICRq+jYO5p+jDb9OC9xg9yQ2Ps=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -112,7 +112,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6Msbq1Rkz/ZHNfyKU0cXaExMOHFmwFSQXfGKxutY1K4=
+			tv0vrqaCwq/1507MKLEb+bdjJyRAH8M/ISu2PEKbFEk=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -140,14 +140,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/yZKMHHxJVqVmdeWyYaktRLK+4DzPRikgLx35hXAoYM=
+			xrvkqwegWueuyJyqHi7qhitf6ZxHvoD1AoqYexwaCE8=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6Msbq1Rkz/ZHNfyKU0cXaExMOHFmwFSQXfGKxutY1K4=
+			tv0vrqaCwq/1507MKLEb+bdjJyRAH8M/ISu2PEKbFEk=
 			</data>
 		</dict>
 		<key>Modules/TeadsSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -175,7 +175,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			chvyDXEbVLpBlArQZn+E28F/uAoaqOPkYISdXmZY12w=
+			ashhNGtKeYXag+Agat+afNShIgGS7OJ6N+/bi69/n78=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

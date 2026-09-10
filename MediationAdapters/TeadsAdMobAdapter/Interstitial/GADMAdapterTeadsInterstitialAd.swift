@@ -13,11 +13,12 @@ import GoogleMobileAds
 
 @objc(GADMAdapterTeadsInterstitialAd)
 public final class GADMAdapterTeadsInterstitialAd: NSObject, MediationInterstitialAd {
+
     var delegate: MediationAdEventDelegate?
 
     var resolveLoad: ((Result<Void, Error>) -> Void)?
 
-    var placement: TeadsAdPlacementInterstitial?
+    internal var placement: TeadsAdPlacementInterstitial?
     private var adConfiguration: MediationInterstitialAdConfiguration?
 
     // MARK: - Load
@@ -36,13 +37,13 @@ public final class GADMAdapterTeadsInterstitialAd: NSObject, MediationInterstiti
         }
 
         self.adConfiguration = adConfiguration
-        resolveLoad = { [weak self] result in
+        self.resolveLoad = { [weak self] result in
             guard let self else { return }
             switch result {
-                case .success:
-                    self.delegate = completionHandler(self, nil)
-                case let .failure(error):
-                    self.delegate = completionHandler(nil, error)
+            case .success:
+                self.delegate = completionHandler(self, nil)
+            case .failure(let error):
+                self.delegate = completionHandler(nil, error)
             }
         }
 
@@ -84,6 +85,7 @@ public final class GADMAdapterTeadsInterstitialAd: NSObject, MediationInterstiti
 // MARK: - TeadsAdPlacementEventsDelegate
 
 extension GADMAdapterTeadsInterstitialAd: TeadsAdPlacementEventsDelegate {
+
     public func adPlacement(
         _: TeadsAdPlacementIdentifiable?,
         didEmitEvent event: TeadsAdPlacementEventName,
@@ -96,24 +98,26 @@ extension GADMAdapterTeadsInterstitialAd: TeadsAdPlacementEventsDelegate {
 // MARK: - TeadsFullScreenEventsDelegate
 
 extension GADMAdapterTeadsInterstitialAd: TeadsFullScreenEventsDelegate {
+
     public func fullScreenPlacement(
-        _: TeadsAdPlacementIdentifiable?,
+        _ placement: TeadsAdPlacementIdentifiable?,
         didEmitEvent event: TeadsFullScreenEventName,
-        data _: [String: Any]?
+        data: [String: Any]?
     ) {
         switch event {
-            case .willPresent:
-                delegate?.willPresentFullScreenView()
-            case .presented:
-                break // GMA SDK has no corresponding callback for "presented"
-            case .willDismiss:
-                delegate?.willDismissFullScreenView()
-            case .dismissed:
-                delegate?.didDismissFullScreenView()
-            @unknown default:
-                break
+        case .willPresent:
+            delegate?.willPresentFullScreenView()
+        case .presented:
+            break // GMA SDK has no corresponding callback for "presented"
+        case .willDismiss:
+            delegate?.willDismissFullScreenView()
+        case .dismissed:
+            delegate?.didDismissFullScreenView()
+        @unknown default:
+            break
         }
     }
+
 }
 
 @_spi(Adapters)

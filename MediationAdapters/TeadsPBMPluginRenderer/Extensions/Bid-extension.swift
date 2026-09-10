@@ -1,5 +1,5 @@
 //
-//  Bid-extension.swift
+//  BidExtension.swift
 //  TeadsPBMPluginRenderer
 //
 //  Refactored by Richard Dépierre on 18/06/2025.
@@ -14,6 +14,7 @@ import PrebidMobile
 /// This enables converting a `Bid` instance into a JSON string payload
 /// that Teads SDK can consume.
 extension Bid: @retroactive Encodable {
+
     // MARK: Coding Keys
 
     /// Keys to encode when serializing to JSON.

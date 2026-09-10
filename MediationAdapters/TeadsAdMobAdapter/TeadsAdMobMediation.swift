@@ -45,7 +45,7 @@ import GoogleMobileAds
         let classNames = [
             NSStringFromClass(GADMAdapterTeadsBanner.self),
             NSStringFromClass(GADMAdapterTeadsNative.self),
-            NSStringFromClass(GADMAdapterTeadsInterstitial.self),
+            NSStringFromClass(GADMAdapterTeadsInterstitial.self)
         ]
         #if DEBUG
         print("[Teads] TeadsAdMobMediation.register() linked: \(classNames.joined(separator: ", "))")

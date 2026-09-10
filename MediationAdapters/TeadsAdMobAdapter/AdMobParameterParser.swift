@@ -35,6 +35,7 @@ struct InterstitialParameters: Decodable {
 /// (set by the publisher in the AdMob dashboard) or a serialized
 /// ``TeadsAdapterSettings`` dictionary (set via ``GADRequest.register``).
 enum AdMobParameterParser {
+
     /// Decodes from a JSON string supplied in the server-side credentials field.
     static func parse<T: Decodable>(fromCredentialJSON rawParameter: String) -> T? {
         guard let data = rawParameter.data(using: .utf8) else { return nil }

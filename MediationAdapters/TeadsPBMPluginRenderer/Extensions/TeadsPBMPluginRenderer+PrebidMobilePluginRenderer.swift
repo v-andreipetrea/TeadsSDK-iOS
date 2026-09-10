@@ -10,8 +10,8 @@ import TeadsSDK
 import UIKit
 
 // MARK: - PrebidMobilePluginRenderer Conformance
-
 extension TeadsPBMPluginRenderer: PrebidMobilePluginRenderer {
+
     /// Plugin name used by Prebid SDK
     public var name: String { Self.name }
 
@@ -43,7 +43,7 @@ extension TeadsPBMPluginRenderer: PrebidMobilePluginRenderer {
 
     /// Called by Prebid when it stops sending lifecycle events
     public func unregisterEventDelegate(
-        pluginEventDelegate _: PluginEventDelegate,
+        pluginEventDelegate: PluginEventDelegate,
         adUnitConfigFingerprint: String
     ) {
         pluginEventDelegates.removeValue(forKey: adUnitConfigFingerprint)
@@ -54,7 +54,7 @@ extension TeadsPBMPluginRenderer: PrebidMobilePluginRenderer {
     public func createBannerView(
         with frame: CGRect,
         bid: Bid,
-        adConfiguration _: AdUnitConfig,
+        adConfiguration: AdUnitConfig,
         loadingDelegate: any DisplayViewLoadingDelegate,
         interactionDelegate: any DisplayViewInteractionDelegate
     ) -> (any UIView & PrebidMobileDisplayViewProtocol)? {
@@ -95,10 +95,10 @@ extension TeadsPBMPluginRenderer: PrebidMobilePluginRenderer {
 
     /// Create interstitial controller (unsupported)
     public func createInterstitialController(
-        bid _: Bid,
-        adConfiguration _: AdUnitConfig,
-        loadingDelegate _: any InterstitialControllerLoadingDelegate,
-        interactionDelegate _: any InterstitialControllerInteractionDelegate
+        bid: Bid,
+        adConfiguration: AdUnitConfig,
+        loadingDelegate: any InterstitialControllerLoadingDelegate,
+        interactionDelegate: any InterstitialControllerInteractionDelegate
     ) -> (any PrebidMobileInterstitialControllerProtocol)? {
         return nil
     }

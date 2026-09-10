@@ -8,74 +8,74 @@
 import Foundation
 
 class ThreadSafeDictionary<V: Hashable, T>: Collection {
+
     private var dictionary: [V: T]
-    private let concurrentQueue = DispatchQueue(
-        label: "Dictionary Barrier Queue",
-        attributes: .concurrent
-    )
+    private let concurrentQueue = DispatchQueue(label: "Dictionary Barrier Queue",
+                                                attributes: .concurrent)
 
     var keys: Dictionary<V, T>.Keys {
-        concurrentQueue.sync {
-            self.dictionary.keys
+        self.concurrentQueue.sync {
+            return self.dictionary.keys
         }
     }
 
     var values: Dictionary<V, T>.Values {
-        concurrentQueue.sync {
-            self.dictionary.values
+        self.concurrentQueue.sync {
+            return self.dictionary.values
         }
     }
 
     var startIndex: Dictionary<V, T>.Index {
-        concurrentQueue.sync {
-            self.dictionary.startIndex
+        self.concurrentQueue.sync {
+            return self.dictionary.startIndex
         }
     }
 
     var endIndex: Dictionary<V, T>.Index {
-        concurrentQueue.sync {
-            self.dictionary.endIndex
+        self.concurrentQueue.sync {
+            return self.dictionary.endIndex
         }
     }
 
     init(dict: [V: T] = [V: T]()) {
-        dictionary = dict
+        self.dictionary = dict
     }
 
     func index(after i: Dictionary<V, T>.Index) -> Dictionary<V, T>.Index {
-        concurrentQueue.sync {
-            self.dictionary.index(after: i)
+        self.concurrentQueue.sync {
+            return self.dictionary.index(after: i)
         }
     }
 
     subscript(key: V) -> T? {
         get {
-            concurrentQueue.sync {
-                self.dictionary[key]
+            self.concurrentQueue.sync {
+                return self.dictionary[key]
             }
         }
         set(newValue) {
-            concurrentQueue.async(flags: .barrier) { [weak self] in
+            self.concurrentQueue.async(flags: .barrier) { [weak self] in
                 self?.dictionary[key] = newValue
             }
         }
     }
 
     subscript(index: Dictionary<V, T>.Index) -> Dictionary<V, T>.Element {
-        concurrentQueue.sync {
-            self.dictionary[index]
+        self.concurrentQueue.sync {
+            return self.dictionary[index]
         }
     }
 
     func removeValue(forKey key: V) {
-        concurrentQueue.async(flags: .barrier) { [weak self] in
+        self.concurrentQueue.async(flags: .barrier) {[weak self] in
             self?.dictionary.removeValue(forKey: key)
         }
     }
 
     func removeAll() {
-        concurrentQueue.async(flags: .barrier) { [weak self] in
+        self.concurrentQueue.async(flags: .barrier) {[weak self] in
             self?.dictionary.removeAll()
         }
     }
+
 }

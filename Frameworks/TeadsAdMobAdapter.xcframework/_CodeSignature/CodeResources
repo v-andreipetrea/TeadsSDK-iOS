@@ -10,7 +10,7 @@
 		</data>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Info.plist</key>
 		<data>
-		eulMlTqWGTBPuhrTqzQEdS+KELw=
+		lh1e5VwHeVRbG/49D/ohWktdNxc=
 		</data>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Info.plist</key>
 		<data>
-		jJv31jX65pjLePgknhIx5moqKfA=
+		iuKsabHOxnBbfbTtbWMAq6hjs5o=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -98,7 +98,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Uh7ZDpdsB9dtuMC+7R34qSBE0iwf8VohA6aO8uBwwRY=
+			ITpIa+oAAVMrOYReK7oGmdwwqtLzk07jJwrsbvfqeqA=
 			</data>
 		</dict>
 		<key>ios-arm64/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios.abi.json</key>
@@ -154,7 +154,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Up+hOmBztyq4Mlz7PM9D520DXI8aQD39nWPIk7Mbb2o=
+			cjO/NuHV1S/FgOQOmq3TpIBMZg3ZTE+NgSwp4UR/4nk=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TeadsAdMobAdapter.framework/Modules/TeadsAdMobAdapter.swiftmodule/arm64-apple-ios-simulator.abi.json</key>

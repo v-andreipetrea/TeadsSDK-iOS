@@ -43531,6 +43531,13 @@
       "value": "1"
     },
     {
+      "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Model\/FrameworkType.swift",
+      "kind": "StringLiteral",
+      "offset": 988,
+      "length": 4,
+      "value": "\"10\""
+    },
+    {
       "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Loader\/Model\/Plugin.swift",
       "kind": "StringLiteral",
       "offset": 189,
@@ -45082,7 +45089,7 @@
       "kind": "StringLiteral",
       "offset": 98,
       "length": 7,
-      "value": "\"6.2.1\""
+      "value": "\"6.2.2\""
     },
     {
       "filePath": "\/Users\/runner\/work\/service-inapp-sdk-ios\/service-inapp-sdk-ios\/TeadsSDK\/Utils\/UnTar.swift",

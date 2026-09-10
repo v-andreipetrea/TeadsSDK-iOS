@@ -1,5 +1,5 @@
 //
-//  TeadsPBMDisplayView.swift
+//  TeadsPrebidDisplayView.swift
 //  TeadsPBMPluginRenderer
 //
 //  Refactored by Richard Dépierre on 18/06/2025.
@@ -15,6 +15,7 @@ import UIKit
 /// A wrapper view conforming to `PrebidMobileDisplayViewProtocol` that
 /// hosts a `TeadsInReadAdView` and relays callbacks to Prebid.
 class TeadsPBMDisplayView: UIView, PrebidMobileDisplayViewProtocol {
+
     /// The Teads ad view, set when `didReceiveAd` is called.
     private(set) var teadsAdView: TeadsInReadAdView?
 
@@ -47,7 +48,7 @@ class TeadsPBMDisplayView: UIView, PrebidMobileDisplayViewProtocol {
             adView.topAnchor.constraint(equalTo: topAnchor),
             adView.leadingAnchor.constraint(equalTo: leadingAnchor),
             adView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            bottom,
+            bottom
         ])
     }
 

@@ -6,10 +6,11 @@
 //
 
 import Foundation
-import PrebidMobile
 import TeadsSDK
+import PrebidMobile
 
 @objc public final class TeadsPBMPluginRenderer: NSObject {
+
     /// Plugin renderer name, used for registration
     public static let name = "teads"
 
@@ -56,7 +57,7 @@ import TeadsSDK
         settings.adRequestSettings.addExtras("0", for: TeadsAdapterSettings.prebidStandaloneKey)
         self.settings = settings
         super.init()
-        placement = Teads.createPrebidPlacement(settings: settings.adPlacementSettings, delegate: self)
+        self.placement = Teads.createPrebidPlacement(settings: settings.adPlacementSettings, delegate: self)
     }
 
     // MARK: - Error Handling

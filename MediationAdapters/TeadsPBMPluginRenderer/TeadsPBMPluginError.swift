@@ -1,5 +1,5 @@
 //
-//  TeadsPBMPluginError.swift
+//  TeadsPluginError.swift
 //  TeadsPBMPluginRenderer
 //
 //  Refactored by Richard Dépierre on 18/06/2025.
@@ -48,9 +48,7 @@ public enum TeadsPBMPluginError: Int, CustomNSError {
 
     /// Additional user info for NSError compatibility.
     public var errorUserInfo: [String: Any] {
-        [
-            NSLocalizedDescriptionKey: errorDescription,
-            NSLocalizedFailureReasonErrorKey: errorDescription,
-        ]
+        [ NSLocalizedDescriptionKey: errorDescription,
+          NSLocalizedFailureReasonErrorKey: errorDescription ]
     }
 }

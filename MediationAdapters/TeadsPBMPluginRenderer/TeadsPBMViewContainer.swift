@@ -8,6 +8,7 @@
 import PrebidMobile
 
 class TeadsPBMViewContainer {
+
     weak var adView: TeadsPBMDisplayView?
 
     weak var loadingDelegate: (any DisplayViewLoadingDelegate)?

@@ -11,6 +11,7 @@ import GoogleMobileAds
 
 @objc(GADMAdapterTeadsBannerAd)
 public final class GADMAdapterTeadsBannerAd: NSObject, MediationBannerAd {
+
     // MARK: InRead path
 
     /// The Teads Ad network InRead AdView
@@ -47,13 +48,13 @@ public final class GADMAdapterTeadsBannerAd: NSObject, MediationBannerAd {
         }
 
         self.adConfiguration = adConfiguration
-        resolveLoad = { [weak self] result in
+        self.resolveLoad = { [weak self] result in
             guard let self else { return }
             switch result {
-                case .success:
-                    self.delegate = completionHandler(self, nil)
-                case let .failure(error):
-                    self.delegate = completionHandler(nil, error)
+            case .success:
+                self.delegate = completionHandler(self, nil)
+            case .failure(let error):
+                self.delegate = completionHandler(nil, error)
             }
         }
 
@@ -123,7 +124,7 @@ public final class GADMAdapterTeadsBannerAd: NSObject, MediationBannerAd {
             adView.leadingAnchor.constraint(equalTo: wrapper.leadingAnchor),
             adView.trailingAnchor.constraint(equalTo: wrapper.trailingAnchor),
             adView.topAnchor.constraint(equalTo: wrapper.topAnchor),
-            adView.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor),
+            adView.bottomAnchor.constraint(equalTo: wrapper.bottomAnchor)
         ])
         return wrapper
     }

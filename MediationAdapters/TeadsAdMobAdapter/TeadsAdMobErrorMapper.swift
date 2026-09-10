@@ -68,7 +68,7 @@ enum TeadsAdMobErrorMapper {
             code: code.rawValue,
             userInfo: [
                 NSLocalizedDescriptionKey: message,
-                NSLocalizedFailureReasonErrorKey: message,
+                NSLocalizedFailureReasonErrorKey: message
             ]
         )
     }

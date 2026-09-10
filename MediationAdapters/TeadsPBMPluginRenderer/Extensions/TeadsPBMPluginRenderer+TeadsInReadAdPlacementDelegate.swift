@@ -10,8 +10,8 @@ import TeadsSDK
 import UIKit
 
 // MARK: - TeadsInReadAdPlacementDelegate
-
 extension TeadsPBMPluginRenderer: TeadsInReadAdPlacementDelegate {
+
     public func didReceiveAd(ad: TeadsInReadAd, adRatio: TeadsAdRatio) {
         let requestId = ad.requestIdentifier.uuidString
         guard let adContainer = adViewContainers[requestId],
@@ -66,7 +66,8 @@ extension TeadsPBMPluginRenderer: TeadsInReadAdPlacementDelegate {
         guard
             let requestId = trackerView.requestIdentifier?.uuidString,
             let container = adViewContainers[requestId],
-            let displayView = container.adView else { return }
+            let displayView = container.adView
+        else { return }
 
         runOnMain {
             displayView.addSubview(trackerView)

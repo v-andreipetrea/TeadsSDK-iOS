@@ -23,7 +23,8 @@ enum ServerFloorPriceParser {
     static func floorPrice(fromJSON json: String?) -> Int? {
         guard
             let data = json?.data(using: .utf8),
-            let pbf = (try? JSONDecoder().decode(Payload.self, from: data))?.pbf else { return nil }
+            let pbf = (try? JSONDecoder().decode(Payload.self, from: data))?.pbf
+        else { return nil }
         return Int(exactly: pbf.rounded(.towardZero))
     }
 }
